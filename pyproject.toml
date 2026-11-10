@@ -1,0 +1,39 @@
+[project]
+name = "dsc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Galve Mateo, Carlos", email = "carlos.galve92@gmail.com" }
+]
+requires-python = ">=3.15"
+dependencies = [
+    "agent-framework-azure-ai==1.0.0rc6",
+    "agent-framework-foundry==1.15.0",
+    "agent-framework-orchestrations==1.4.0",
+    "azure-ai-contentsafety==1.0.0",
+    "azure-ai-documentintelligence==1.0.2",
+    "azure-search-documents==12.1.0b2",
+    "python-dotenv==1.2.4",
+]
+
+[tool.uv.build-backend]
+module-name = "dsc"
+module-root = "src"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.19.3",
+    "jupyter>=1.1.1",
+    "pre-commit>=4.7.0",
+]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "uv"
+tag_format = "v$version"
+update_changelog_on_bump = true
