@@ -14,7 +14,9 @@ dependencies = [
     "azure-ai-contentsafety==1.0.0",
     "azure-ai-documentintelligence==1.0.2",
     "azure-search-documents==12.1.0b2",
+    "pandas>=3.1.1",
     "python-dotenv==1.2.4",
+    "pyyaml>=6.0.3",
 ]
 
 [tool.uv.build-backend]
@@ -30,10 +32,26 @@ dev = [
     "commitizen>=4.19.3",
     "jupyter>=1.1.1",
     "pre-commit>=4.7.0",
+    "ruff>=0.17.4",
 ]
+
+[tool.ruff]
+line-length = 88                        # Estándar de black.
+
+[tool.ruff.lint]
+# I: isort · F: Pyflakes · E/W: pycodestyle · UP: pyupgrade · B: flake8-bugbear.
+select = ["I", "F", "E", "W", "UP", "B"]
+ignore = ["E501"]                       # El largo de línea lo gestiona el formateador.
+
+[tool.ruff.format]
+quote-style = "double"                  # Comillas dobles (valor por defecto).
+docstring-code-format = true            # Formatea también el código dentro de docstrings.
 
 [tool.commitizen]
 name = "cz_conventional_commits"
 version_provider = "uv"
 tag_format = "v$version"
 update_changelog_on_bump = true
+version_files = [
+    "src/dsc/_version.py:__version__"
+]
