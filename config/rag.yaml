@@ -1,0 +1,4 @@
+path_db: data/in/lab_03/chroma_proyecto
+nombre_coleccion: "soluciones_pago_te3small_estructura_v1"
+top_k: 3
+umbral_distancia: null

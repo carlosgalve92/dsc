@@ -25,21 +25,21 @@ config_summarize_prompt = read_yaml(PROJECT_ROOT / "config/summarize_prompt.yaml
 summarize_prompt = build_prompt_from_template(config_summarize_prompt, plantilla=PL_SUMMARIZE_PROMPT)
 
 compaction_strategy = TokenBudgetComposedStrategy(
-    token_budget=1800,
+    token_budget=6000,
     tokenizer=tokenizer,
     strategies=[
         # Etapa 1: resumir la conversación antigua conservando datos financieros
         SummarizationStrategy(
             client=summarizer_client,
-            target_count=4,
+            target_count=6,
             threshold=2,
             prompt=summarize_prompt,
         ),
 
         # Etapa 2 (respaldo): eliminar grupos antiguos si aún se excede el presupuesto
         TruncationStrategy(
-            max_n=1800,
-            compact_to=1600,
+            max_n=6000,
+            compact_to=5400,
             tokenizer=tokenizer,
         ),
     ],

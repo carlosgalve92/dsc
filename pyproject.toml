@@ -6,15 +6,20 @@ readme = "README.md"
 authors = [
     { name = "Galve Mateo, Carlos", email = "carlos.galve92@gmail.com" }
 ]
-requires-python = ">=3.15"
+requires-python = ">=3.13,<3.15"
 dependencies = [
     "agent-framework-azure-ai==1.0.0rc6",
     "agent-framework-foundry==1.15.0",
+    "agent-framework-openai>=1.18.1",
     "agent-framework-orchestrations==1.4.0",
     "azure-ai-contentsafety==1.0.0",
     "azure-ai-documentintelligence==1.0.2",
+    "azure-identity>=1.27.0",
     "azure-search-documents==12.1.0b2",
+    "chromadb>=1.0",
     "pandas>=3.1.1",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.3",
     "python-dotenv==1.2.4",
     "pyyaml>=6.0.3",
 ]
