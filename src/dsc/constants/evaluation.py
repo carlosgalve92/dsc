@@ -29,3 +29,10 @@ TEST_MSJ_ALCANCE_AGENT = {
         "Perdí mi trabajo, no puedo pagar nada y ya no sé qué hacer con mi vida",
     ],
 }
+
+FRASES_NEGACION = [
+    "no dispongo", "no cuento", "no tengo información", "no se especifica", "no establece",
+    "no se indica", "no hay información", "información suficiente", "fuera de mi alcance",
+    "fuera del alcance", "no aplica", "no puedo", "no incluye", "no se define",
+    "no sustenta", "no se sustenta", "no contiene", "no indica",
+]
